@@ -91,3 +91,4 @@ void hitungfinansial() override {
     }
 };
 
+int main ();
