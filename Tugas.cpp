@@ -6,7 +6,7 @@ using namespace std;
 class pegawai{
 protected:
 string nama, noPegawai, jabatan;
-float gaji, bonus, pajak;
+long long gaji, bonus, pajak;
 
 public:
 pegawai(string n, string no_pgw, string j){
@@ -21,11 +21,11 @@ pegawai(string n, string no_pgw, string j){
 string getnama(){return nama;}
 string getnopegawai(){return noPegawai;}
 string getjabatan(){return jabatan;}
-float getgaji(){return gaji;}
-float getbonus(){return bonus;}
-float getpajak(){return pajak;}
+long long getgaji(){return gaji;}
+long long getbonus(){return bonus;}
+long long getpajak(){return pajak;}
 
-float gajibersih(){
+long long gajibersih(){
     return (gaji + bonus) - pajak;
 }
 
@@ -97,7 +97,8 @@ int main () {
     string namaPegawai, noPegawai;
 
     do {
-        cout <<"^^^Menu Utama^^^" <<endl;
+        cout <<"==========================" << endl;
+        cout <<"\n^^^Menu Utama^^^" <<endl;
         cout <<"1. Input Data Pegawai" <<endl;
         cout <<"2. Tampilan Data" <<endl;
         cout <<"3. Keluar" <<endl;
@@ -121,6 +122,7 @@ int main () {
                 cout <<"2. Direktur" <<endl;
                 cout <<"3. Manajer" <<endl;
                 cout <<"4. Staff" <<endl;
+                cout <<"Pilih Jabatan = " ;
                 cin >> pilihanJabatan;
 
                 if (pilihanJabatan == 1) {
@@ -136,13 +138,13 @@ int main () {
                     pegawaiBaru = new Staf(namaPegawai, noPegawai);
                     break;
                 } else {
-                    cout <<"Pesan: No Salah, Ulangi !" <<endl;
+                    cout <<"No Salah, Ulangi !" <<endl;
                 }
             }
             if (pegawaiBaru != nullptr) { //Gabung & Simpan Data
                 pegawaiBaru ->hitungfinansial();
                 daftarPegawai.push_back(pegawaiBaru);
-                cout <<"\nPesan: Data Pegawai Tersimpan" <<endl;
+                cout <<"\nData Pegawai Tersimpan" <<endl;
             }
         } else if (pilihanMenu == 2) {
             cout <<"\nMenu Daftar Pegawai" <<endl;
@@ -155,18 +157,18 @@ int main () {
                 }
             }
             int subPilihan;
-            cout <<"\nMau lanjut kemana?" <<endl;
+            cout <<"Mau lanjut kemana?" <<endl;
             cout <<"1. Kembali ke awal (Menu)" <<endl;
             cout <<"2. Selesai (Keluar Aplikasi)" <<endl;
             cout <<"Pilihan Anda: ";
             cin >> subPilihan;
 
             if (subPilihan == 2) {
-                cout <<"Pesan: Terimakasih Bla bla bla" <<endl;
+                cout <<"Tetap sehat di dunia yang tak sehat " <<endl;
                 break;
             }
         } else if (pilihanMenu == 3) {
-            cout <<"\nPesan: Terimakasih Bla bla bla" <<endl;
+            cout <<"\nTetap sehat di dunia yang tak sehat" <<endl;
             break;
         } else {
             cout <<"\nPilihan anda salah. Masukkan ANGKA 1-3!\n\n";
@@ -178,6 +180,6 @@ int main () {
     }
     daftarPegawai.clear();
 
-    cout <<"\nProgram Selesai" <<endl;
+    cout <<"\nProgram Selesai Terimakasih" <<endl;
     return 0;
 };
