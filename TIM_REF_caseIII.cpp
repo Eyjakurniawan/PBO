@@ -1,3 +1,5 @@
+//BAGIAN 1    : Eyja Kurniawan
+// Keterangan : Membuat Class Pegawai, Method, Encapsulation, Inheritance, dan juga Polimorphism 
 #include <iostream>
 #include <string>
 #include <vector>
@@ -47,6 +49,20 @@ virtual ~pegawai(){
 }
 };
 
+// KETERANGAN GAJI, BONUS, DAN PAJAK //
+
+// KOMISARIS 
+// Gaji : 25 Juta, Bonus : 10 Juta, Pajak : 15%
+
+// DIREKTUR
+// Gaji : 20 Juta, Bonus : 7.5 Juta, Pajak : 12%
+
+// MANAJER
+// Gaji : 12 Juta, Bonus : 4 Juta, Pajak : 10%
+
+// STAF
+// Gaji : 5 Juta, Bonus : 1.5 Juta, Pajak : 5%
+
 class Komisaris : public pegawai{
 public:
 Komisaris(string nama, string noPegawai) : pegawai (nama, noPegawai, "Komisaris"){}
@@ -65,7 +81,7 @@ Direktur(string nama, string noPegawai) : pegawai(nama, noPegawai, "Direktur"){}
 void hitungfinansial() override {
     gaji = 20000000; //Gaji Direktur 20 Juta 
     bonus = 7500000; //Bonus Direktur 7.5 Juta
-    pajak = (gaji + bonus) * 0.12; //Pajak Direktur 12 Juta
+    pajak = (gaji + bonus) * 0.12; //Pajak Direktur 12%
 }
 };
 
@@ -90,6 +106,9 @@ void hitungfinansial() override {
     pajak = (gaji + bonus) * 0.05; //Pajak Manajer 5%
     }
 };
+
+// BAGIAN 2 : Ramlan Leonardo Napitupulu
+// Keterangan : int main()
 
 int main () {
     vector<pegawai*> daftarPegawai;  //Untuk menampung database pegawai sementara
